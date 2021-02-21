@@ -1,0 +1,6 @@
+codeql-runner
+.ok/
+packages/
+bin/
+obj/
+tmp/
