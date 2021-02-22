@@ -23,6 +23,8 @@ namespace testdotnet
                 string path = Console.ReadLine();
                 Console.Write(System.IO.File.ReadAllText(path));
 
+                var sql2= "SELECT * FROM Users WHERE id=" + n.ToString() + ";";
+
                 Console.Write(GetRequest());
             }
         }
