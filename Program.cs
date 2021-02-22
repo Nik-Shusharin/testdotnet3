@@ -28,7 +28,7 @@ namespace testdotnet
                 Console.Write(GetRequest());
             }
 
-            Console.Write(unsec2.GetRequest());
+            Console.Write(unsec3.GetRequest());
         }
 
         public static string GetRequest()
