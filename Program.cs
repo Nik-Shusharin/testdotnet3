@@ -6,10 +6,13 @@ namespace testdotnet
 {
     class Program
     {
+        public static readonly string UserName = new String("DFAWERWR345FASDFAS34fA");
+
         static void Main(string[] args)
         {
             var login = "root";
             var password = "A6LD9LoPRPCTpe9WKGSq";
+
             Console.WriteLine("Hello World!");
             if (login == "root")
             {
@@ -21,6 +24,10 @@ namespace testdotnet
                 var unused = "unused";
                 
                 string path = Console.ReadLine();
+        
+                if(File.Exists(path)){
+                    var test = File.OpenRead(path);
+                }
                 Console.Write(System.IO.File.ReadAllText(path));
 
                 var sql2= "SELECT * FROM Users WHERE id=" + n.ToString() + ";";
