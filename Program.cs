@@ -52,5 +52,20 @@ namespace testdotnet
                 return reader.ReadToEnd();
             }
         }
+
+        public static string GetRequest2()
+        {
+            var MyToken= "asdfERWQEFASDFAWERWR345FASDFAS34fASFDADSFASDF34rqwefSAFDSADFA";
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://api.google.com");
+            request.Headers.Add("authorization", "Bearer asdfERWQEFASDFAWERWR345FASDFAS34fASFDADSFASDF34rqwefSAFDSADFA");
+            request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
+
+            using(HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            using(Stream stream = response.GetResponseStream())
+            using(StreamReader reader = new StreamReader(stream))
+            {
+                return reader.ReadToEnd();
+            }
+        }
     }
 }
