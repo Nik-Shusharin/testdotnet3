@@ -6,7 +6,7 @@ using System.Text;
 
 namespace testdotnet
 {
-    public class unsec3
+    public class unsec11
     {
         public static string GetRequest()
         {
