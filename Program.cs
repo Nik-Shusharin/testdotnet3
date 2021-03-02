@@ -37,10 +37,10 @@ namespace testdotnet
                 var sql2= "SELECT * FROM " + userTable + " WHERE UserName='" + userName + "';";
 
                 string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=usersdb;User id="+ login + ";Password="+ password + ";Integrated Security=True";
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (var connection = new System.Data.SqlClient.SqlConnection(connectionString))
                 {
                     connection.Open();
-                    SqlCommand command = new SqlCommand(sql2, connection);
+                    var command = new System.Data.SqlClient.SqlCommand(sql2, connection);
                 }
 
                 Console.Write(GetRequest());
