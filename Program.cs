@@ -69,6 +69,7 @@ namespace testdotnet
             var MyToken= "asdfERWQEFASDFAWERWR345FASDFAS34fASFDADSFASDF34rqwefSAFDSADFA";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://api.google.com");
             request.Headers.Add("authorization", "Bearer asdfERWQEFASDFAWERWR345FASDFAS34fASFDADSFASDF34rqwefSAFDSADFA");
+            request.Headers.Add("User", "Administrator");
             request.AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate;
 
             using(HttpWebResponse response = (HttpWebResponse)request.GetResponse())
