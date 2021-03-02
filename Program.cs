@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.IO;
+using System.Data.SqlClient;
 
 namespace testdotnet
 {
@@ -30,7 +31,17 @@ namespace testdotnet
                 }
                 Console.Write(System.IO.File.ReadAllText(path));
 
-                var sql2= "SELECT * FROM Users WHERE id=" + n.ToString() + ";";
+
+                string userName = Console.ReadLine();
+                string userTable = System.Environment.GetEnvironmentVariable("UserTable", EnvironmentVariableTarget.User);
+                var sql2= "SELECT * FROM " + userTable + " WHERE UserName='" + userName + "';";
+
+                string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=usersdb;User id="+ login + ";Password="+ password + ";Integrated Security=True";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(sql2, connection);
+                }
 
                 Console.Write(GetRequest());
             }
