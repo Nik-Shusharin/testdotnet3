@@ -40,7 +40,7 @@ namespace testdotnet
                 using (var connection = new System.Data.SqlClient.SqlConnection(connectionString))
                 {
                     connection.Open();
-                    var command = new System.Data.SqlClient.SqlCommand(sql2, connection);
+                    var command = new System.Data.SqlClient.SqlCommand("SELECT * FROM " + userTable + " WHERE UserName='" + userName + "';", connection);
                 }
 
                 Console.Write(GetRequest());
