@@ -35,7 +35,7 @@ namespace testdotnet
                 string userName = Console.ReadLine();
                 string userTable = System.Environment.GetEnvironmentVariable("UserTable", EnvironmentVariableTarget.User);
                 var sql2= "SELECT * FROM " + userTable + " WHERE UserName='" + userName + "';";
-
+                var sql3= "SELECT * FROM " + userTable + " WHERE UserName='" + userName + "';";
                 string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=usersdb;User id="+ login + ";Password="+ password + ";Integrated Security=True";
                 using (var connection = new System.Data.SqlClient.SqlConnection(connectionString))
                 {
